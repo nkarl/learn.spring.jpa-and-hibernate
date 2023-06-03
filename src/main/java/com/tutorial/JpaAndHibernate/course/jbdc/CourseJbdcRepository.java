@@ -12,7 +12,7 @@ public class CourseJbdcRepository {
     @Autowired
     private JdbcTemplate springJdbcTemplate;
 
-    private static String INSERT_QUERY = """
+    private static final String INSERT_QUERY = """
                 INSERT INTO course(id, name, author)
                 VALUES(?, ?, ?);
             """;
@@ -22,7 +22,7 @@ public class CourseJbdcRepository {
                 course.getId(), course.getName(), course.getAuthor());
     }
 
-    private static String DELETE_QUERY = """
+    private static final String DELETE_QUERY = """
                 DELETE FROM course WHERE id=?
             """;
 
@@ -30,7 +30,7 @@ public class CourseJbdcRepository {
         springJdbcTemplate.update(DELETE_QUERY, id);
     }
 
-    private static String SELECT_QUERY = """
+    private static final String SELECT_QUERY = """
                 SELECT * FROM course WHERE id=?
             """;
 
