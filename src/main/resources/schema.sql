@@ -4,6 +4,3 @@ CREATE TABLE IF NOT EXISTS course (
     author  VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
 );
-
-INSERT INTO course (id, name, author)
-VALUES(1, 'Learn AWS', 'in28minutes');
